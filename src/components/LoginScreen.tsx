@@ -118,7 +118,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
         </div>
 
         <p className="relative z-10 text-[10px] font-bold uppercase tracking-widest text-white/45">
-          TCB · Transportes de Moçambique
+          TCB · Transportes Carlos Bié
         </p>
       </section>
 

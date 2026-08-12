@@ -1,57 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 190" fill="none" role="img" aria-label="TCB Transportes">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" fill="none" role="img" aria-label="TCB Transportes">
   <defs>
     <mask id="tcbMark" maskUnits="userSpaceOnUse">
-      <rect width="660" height="190" fill="white"/>
-      <!-- Cab rear window -->
-      <path fill="black" d="M 168 34 L 258 34 C 268 34 274 42 276 54 L 280 88 C 281 96 276 102 266 102 L 162 100 Z"/>
-      <!-- Cab front window -->
-      <path fill="black" d="M 96 98 L 108 58 C 114 40 126 32 144 30 L 158 30 L 158 100 Z"/>
-      <!-- Windshield / A-pillar wedge -->
-      <path fill="black" d="M 286 38 C 318 44 342 58 362 82 L 384 108 L 290 104 Z"/>
-      <!-- Horizontal body cutout for TCB -->
-      <rect x="70" y="118" width="500" height="34" fill="black"/>
-      <!-- Restore TCB letters inside cutout -->
-      <text x="148" y="148" fill="white" font-family="Rockwell, 'Roboto Slab', Georgia, serif" font-size="52" font-weight="700" letter-spacing="12">TCB</text>
-      <!-- Door handle nub restored -->
-      <rect x="388" y="128" width="16" height="7" rx="1" fill="white"/>
-      <!-- Front speed streaks restored -->
-      <path fill="white" d="M 430 126 C 452 122 478 122 502 128 C 498 136 456 136 428 132 Z"/>
-      <path fill="white" d="M 518 120 C 542 116 572 118 596 124 C 586 132 546 132 516 128 Z"/>
+      <rect width="680" height="200" fill="white"/>
+      <path fill="black" d="M175 36h92c9 0 14 7 16 18l4 36c1 9-3 14-12 14H170l5-68z"/>
+      <path fill="black" d="M100 102L112 58c5-16 16-24 34-26h16v70H100z"/>
+      <path fill="black" d="M292 40c30 6 52 20 72 44l24 28H296l-4-72z"/>
+      <path fill="black" d="M78 120h430c8 0 18-1 28-4 14-4 32-4 48 0l-6 12c-14-3-28-3-40 0H78v-8z"/>
+      <text x="155" y="152" fill="white" font-family="'Roboto Slab', Rockwell, Georgia, serif" font-size="54" font-weight="700" letter-spacing="10">TCB</text>
+      <rect x="400" y="132" width="17" height="8" rx="1.5" fill="white"/>
+      <path fill="white" d="M440 128c22-4 48-4 72 2l-5 11c-20-4-44-4-67 1v-14z"/>
+      <path fill="white" d="M530 122c26-4 56-2 82 4l-7 11c-22-5-48-6-75 1v-16z"/>
     </mask>
   </defs>
-
-  <!-- Angled chassis / ground bar -->
-  <path fill="currentColor" d="M 0 152 L 90 130 L 500 130 C 545 138 598 156 660 178 L 0 178 Z"/>
-
-  <!-- Main pickup silhouette -->
-  <path
-    mask="url(#tcbMark)"
-    fill="currentColor"
-    d="
-      M 14 92
-      L 68 94
-      C 76 56 98 30 128 24
-      C 178 14 268 12 318 22
-      C 338 26 354 40 368 58
-      L 408 106
-      L 536 108
-      C 572 110 598 120 606 138
-      C 612 150 600 160 582 162
-      L 630 178
-      L 470 178
-      L 456 162
-      L 78 162
-      L 10 178
-      L 0 178
-      L 0 150
-      L 88 130
-      L 20 130
-      C 10 130 6 120 12 114
-      L 40 102
-      L 40 90
-      L 18 88
-      C 14 88 12 90 14 92
-      Z
-    "
-  />
+  <path fill="currentColor" d="M4 160l92-26h410c48 8 104 28 170 52H4v-26z"/>
+  <path mask="url(#tcbMark)" fill="currentColor" d="M16 96l54 2c8-40 32-68 64-74c52-12 148-14 200-4c22 4 40 18 54 38l42 52h130c38 2 66 14 74 34c6 14-6 24-24 26l52 18H470l-14-16H82L12 186H4v-30l90-22H22c-10 0-14-10-8-16l28-14V96H20c-4 0-6 0-4 0z"/>
 </svg>

@@ -1,6 +1,6 @@
 {
   "name": "TCB Motoristas - Gestão e Recrutamento",
-  "description": "Sistema corporativo de recrutamento e gestão de motoristas para a TCB (Transportes de Moçambique).",
+  "description": "Sistema corporativo de recrutamento e gestão de motoristas para a TCB (Transportes Carlos Bié).",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

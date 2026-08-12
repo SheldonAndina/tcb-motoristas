@@ -30,7 +30,7 @@ export const JobFormModal: React.FC<JobFormModalProps> = ({
   );
   const [description, setDescription] = useState(
     initialJob?.description ||
-      'Recrutamento para motorista de frota de transportes e logística da TCB Moçambique.'
+      'Recrutamento para motorista de frota de transportes e logística da TCB - Transportes Carlos Bié.'
   );
   const [requirementsText, setRequirementsText] = useState(
     initialJob?.requirements?.join('\n') ||

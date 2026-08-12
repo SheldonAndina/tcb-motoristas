@@ -121,7 +121,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div className="relative flex flex-col md:flex-row md:items-end justify-between gap-5">
         <div>
           <p className="text-[11px] font-semibold text-white/55 tracking-wide mb-1">
-            TCB Moçambique
+            Transportes Carlos Bié
           </p>
           <h2 className="text-2xl sm:text-[1.75rem] font-semibold tracking-tight">
             Recrutamento & frota

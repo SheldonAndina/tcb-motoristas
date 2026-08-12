@@ -49,7 +49,7 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({
 
           <div>
             <span className="text-xs font-bold text-ink dark:text-white uppercase tracking-wider block">
-              Documento Oficial TCB Moçambique
+              Documento Oficial TCB - Transportes Carlos Bié
             </span>
             <span className="text-[10px] text-ink/50 dark:text-white/45 font-medium block mt-0.5">
               Tipo: {doc.type} • Carregado em: {doc.uploadDate}

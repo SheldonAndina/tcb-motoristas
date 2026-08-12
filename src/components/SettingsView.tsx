@@ -7,7 +7,7 @@ interface SettingsViewProps {
 }
 
 export const SettingsView: React.FC<SettingsViewProps> = ({ onShowToast }) => {
-  const [companyName, setCompanyName] = useState('TCB - Transportes de Moçambique, S.A.');
+  const [companyName, setCompanyName] = useState('TCB - Transportes Carlos Bié, S.A.');
   const [nuit, setNuit] = useState('100293810');
   const [address, setAddress] = useState(
     'Av. 25 de Setembro, Nº 1820, 4º Andar, Maputo, Moçambique'

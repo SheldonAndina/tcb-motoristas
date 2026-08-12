@@ -863,7 +863,7 @@ export const PublicCandidatePortal: React.FC<PublicCandidatePortalProps> = ({
                 {/* Submit Action */}
                 <div className="pt-4 border-t border-ink/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <p className="text-[11px] text-ink/50 dark:text-white/45">
-                    Ao submeter, confirma a veracidade das informações sob responsabilidade legal com a TCB Moçambique.
+                    Ao submeter, confirma a veracidade das informações sob responsabilidade legal com a TCB Transportes Carlos Bié.
                   </p>
 
                   <button
@@ -1011,7 +1011,7 @@ export const PublicCandidatePortal: React.FC<PublicCandidatePortalProps> = ({
       {/* Footer */}
       <footer className="bg-white dark:bg-ink-soft border-t border-ink/10 dark:border-white/10 py-6 px-4 text-center text-xs text-ink/50 dark:text-white/45 mt-auto">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© {new Date().getFullYear()} TCB - Transportes de Moçambique, S.A.</p>
+          <p>© {new Date().getFullYear()} TCB - Transportes Carlos Bié, S.A.</p>
           <div className="flex items-center gap-4 text-[11px] font-bold">
             <span className="text-ink dark:text-white">Maputo • Beira • Nampula • Tete</span>
             <span>Linha Direta RH: +258 21 000 000</span>
