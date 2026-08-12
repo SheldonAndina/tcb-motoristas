@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Menu,
   Search,
@@ -12,6 +12,7 @@ import {
   Sun,
   Moon,
   Truck,
+  X,
 } from 'lucide-react';
 import { ActivePage, User } from '../types';
 
@@ -41,6 +42,12 @@ export const Header: React.FC<HeaderProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [showNotifications, setShowNotifications] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
+  const mobileSearchRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (showMobileSearch) mobileSearchRef.current?.focus();
+  }, [showMobileSearch]);
 
   const getPageTitle = (page: ActivePage) => {
     switch (page) {
@@ -135,22 +142,45 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-30 tcb-panel border-b border-ink/8 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4 shrink-0 backdrop-blur-md bg-white/92 dark:bg-dark-panel/92">
-      <div className="flex items-center gap-3 min-w-0">
+    <>
+    <header className="sticky top-0 z-30 tcb-panel border-b border-ink/8 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-3 shrink-0 backdrop-blur-md bg-white/92 dark:bg-dark-panel/92">
+      {/* Mobile search overlay */}
+      {showMobileSearch && (
+        <div className="absolute inset-0 z-10 flex items-center gap-2 px-4 bg-white dark:bg-dark-panel md:hidden">
+          <Search className="w-4 h-4 shrink-0 text-ink/35 dark:text-white/35" />
+          <input
+            ref={mobileSearchRef}
+            type="text"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            placeholder="Pesquisar motorista, BI…"
+            className="flex-1 py-1.5 text-sm bg-transparent text-ink dark:text-white placeholder:text-ink/35 dark:placeholder:text-white/30 focus:outline-none"
+          />
+          <button
+            type="button"
+            onClick={() => { setShowMobileSearch(false); setSearchQuery(''); onSearchGlobal(''); }}
+            className="p-1.5 rounded-lg text-ink/50 dark:text-white/50 hover:bg-ink/5 dark:hover:bg-white/10"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
+      <div className="flex items-center gap-2 sm:gap-3 min-w-0">
         <button
           onClick={onOpenMobileMenu}
-          className="p-2 text-ink/60 dark:text-white/60 hover:text-ink dark:hover:text-white hover:bg-ink/5 dark:hover:bg-white/10 rounded-xl lg:hidden transition-colors"
+          className="p-2 text-ink/60 dark:text-white/60 hover:text-ink dark:hover:text-white hover:bg-ink/5 dark:hover:bg-white/10 rounded-xl lg:hidden transition-colors shrink-0"
           title="Abrir menu"
         >
           <Menu className="w-5 h-5" />
         </button>
 
         <div className="min-w-0">
-          <div className="flex items-center gap-2">
-            <h1 className="text-base lg:text-lg font-extrabold text-ink dark:text-white truncate tracking-tight">
+          <div className="flex items-center gap-1.5">
+            <h1 className="text-sm sm:text-base lg:text-lg font-extrabold text-ink dark:text-white truncate tracking-tight">
               {title}
             </h1>
-            <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-medium tracking-wide text-ink/45 dark:text-white/40 border border-ink/10 dark:border-white/10">
+            <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-medium tracking-wide text-ink/45 dark:text-white/40 border border-ink/10 dark:border-white/10 shrink-0">
               <Building className="w-3 h-3" />
               TCB
             </span>
@@ -161,17 +191,28 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      <div className="flex items-center gap-2 shrink-0">
-        <div className="relative hidden md:block w-48 lg:w-60">
+      <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        {/* Desktop search */}
+        <div className="relative hidden md:block w-44 lg:w-56">
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-ink/35 dark:text-white/35" />
           <input
             type="text"
             value={searchQuery}
             onChange={handleSearchChange}
-            placeholder="Pesquisar motorista, BI…"
+            placeholder="Pesquisar motorista…"
             className="w-full pl-9 pr-3 py-2 text-xs bg-paper-muted/80 dark:bg-ink/50 border border-ink/10 dark:border-white/10 rounded-xl text-ink dark:text-white placeholder:text-ink/35 dark:placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-accent/40 transition-all"
           />
         </div>
+
+        {/* Mobile search toggle */}
+        <button
+          type="button"
+          onClick={() => setShowMobileSearch(true)}
+          className="p-2 text-ink/60 dark:text-white/60 hover:text-ink dark:hover:text-white hover:bg-ink/5 dark:hover:bg-white/10 rounded-xl transition-colors md:hidden"
+          title="Pesquisar"
+        >
+          <Search className="w-4 h-4" />
+        </button>
 
         <button
           type="button"
@@ -311,5 +352,6 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
     </header>
+    </>
   );
 };

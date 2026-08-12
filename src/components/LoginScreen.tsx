@@ -85,30 +85,30 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
 
   return (
     <div className="min-h-screen tcb-surface flex flex-col lg:flex-row font-sans antialiased text-ink dark:text-white">
-      {/* Brand hero — dominant plane */}
-      <section className="relative lg:w-[54%] min-h-[44vh] lg:min-h-screen overflow-hidden bg-ink text-white flex flex-col justify-between p-8 sm:p-12">
+      {/* Brand hero */}
+      <section className="relative lg:w-[52%] min-h-[32vh] sm:min-h-[38vh] lg:min-h-screen overflow-hidden bg-ink text-white flex flex-col justify-between p-6 sm:p-10 lg:p-12">
         <div className="absolute inset-0 tcb-hero-image scale-[1.02]" />
         <div className="absolute inset-0 tcb-hero-scrim" />
         <div className="absolute inset-x-0 top-0 h-1 bg-accent" />
 
         <div className="relative z-10">
-          <Logo size="lg" variant="light" />
+          <Logo size="md" variant="light" />
         </div>
 
-        <div className="relative z-10 max-w-xl space-y-4 py-10 lg:py-0">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">
+        <div className="relative z-10 max-w-xl space-y-3 py-6 lg:py-0">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/55 hidden sm:block">
             Maputo · Beira · Nampula
           </p>
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.05]">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
             Recrutamento de motoristas e controlo operacional
           </h1>
-          <p className="text-base sm:text-lg text-white/75 font-medium leading-relaxed">
+          <p className="text-sm sm:text-base text-white/70 font-medium leading-relaxed hidden sm:block">
             Uma área de trabalho clara para gerir candidaturas, documentos e equipas de condução.
           </p>
           {onOpenPublicPortal && (
             <button
               onClick={onOpenPublicPortal}
-              className="inline-flex items-center gap-2 mt-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 mt-1 text-sm font-semibold text-white/75 hover:text-white transition-colors"
             >
               <Truck className="w-4 h-4" />
               Ir para o portal de candidatura
@@ -117,14 +117,14 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
           )}
         </div>
 
-        <p className="relative z-10 text-[10px] font-bold uppercase tracking-widest text-white/45">
+        <p className="relative z-10 text-[10px] font-bold uppercase tracking-widest text-white/40 hidden lg:block">
           TCB · Transportes Carlos Bié
         </p>
       </section>
 
       {/* Auth panel */}
-      <section className="flex-1 flex flex-col justify-center items-center p-6 sm:p-10">
-        <div className="w-full max-w-md tcb-panel rounded-xl p-8 sm:p-10">
+      <section className="flex-1 flex flex-col justify-center items-center p-5 sm:p-8 lg:p-10">
+        <div className="w-full max-w-md tcb-panel rounded-2xl p-6 sm:p-8 lg:p-10">
           <div className="mb-8">
             <p className="text-[10px] font-bold text-accent uppercase tracking-[0.18em]">
               Portal de gestão

@@ -452,7 +452,7 @@ export const ApplicationsPipelineView: React.FC<ApplicationsPipelineViewProps> =
       </div>
 
       {/* ── Kanban board ── */}
-      <div className="flex gap-4 overflow-x-auto pb-4 -mx-1 px-1 snap-x snap-mandatory">
+      <div className="flex gap-3 overflow-x-auto pb-4 -mx-4 px-4 sm:-mx-1 sm:px-1 snap-x snap-mandatory scroll-smooth" style={{WebkitOverflowScrolling: 'touch'}}>
         {STAGES.map((stage) => {
           const cfg = STAGE_CONFIG[stage];
           const appsInStage = filtered.filter((a) => a.stage === stage);
@@ -460,7 +460,7 @@ export const ApplicationsPipelineView: React.FC<ApplicationsPipelineViewProps> =
           return (
             <div
               key={stage}
-              className={`flex flex-col min-w-[280px] w-[280px] sm:min-w-[295px] sm:w-[295px] rounded-2xl border border-ink/[0.07] dark:border-white/[0.07] border-t-[3px] ${cfg.color} snap-start overflow-hidden`}
+              className={`flex flex-col min-w-[260px] w-[260px] sm:min-w-[285px] sm:w-[285px] rounded-2xl border border-ink/[0.07] dark:border-white/[0.07] border-t-[3px] ${cfg.color} snap-start overflow-hidden shrink-0`}
             >
               {/* Column header */}
               <div className={`px-4 py-3 flex items-center justify-between ${cfg.headerBg}`}>

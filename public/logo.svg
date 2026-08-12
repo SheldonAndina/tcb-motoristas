@@ -1,17 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" fill="none" role="img" aria-label="TCB Transportes">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" fill="none" role="img" aria-label="TCB Transportes">
   <defs>
-    <mask id="tcbMark" maskUnits="userSpaceOnUse">
-      <rect width="680" height="200" fill="white"/>
-      <path fill="black" d="M175 36h92c9 0 14 7 16 18l4 36c1 9-3 14-12 14H170l5-68z"/>
-      <path fill="black" d="M100 102L112 58c5-16 16-24 34-26h16v70H100z"/>
-      <path fill="black" d="M292 40c30 6 52 20 72 44l24 28H296l-4-72z"/>
-      <path fill="black" d="M78 120h430c8 0 18-1 28-4 14-4 32-4 48 0l-6 12c-14-3-28-3-40 0H78v-8z"/>
-      <text x="155" y="152" fill="white" font-family="'Roboto Slab', Rockwell, Georgia, serif" font-size="54" font-weight="700" letter-spacing="10">TCB</text>
-      <rect x="400" y="132" width="17" height="8" rx="1.5" fill="white"/>
-      <path fill="white" d="M440 128c22-4 48-4 72 2l-5 11c-20-4-44-4-67 1v-14z"/>
-      <path fill="white" d="M530 122c26-4 56-2 82 4l-7 11c-22-5-48-6-75 1v-16z"/>
+    <mask id="tcb" maskUnits="userSpaceOnUse">
+      <rect width="720" height="200" fill="white"/>
+      <!-- Windows -->
+      <path fill="black" d="M162 40 H250 L254 96 H158 Z"/>
+      <path fill="black" d="M108 74 L148 40 V96 H104 Z"/>
+      <path fill="black" d="M268 44 C300 52 326 70 346 98 H268 Z"/>
+      <!-- Body stripe -->
+      <rect x="70" y="118" width="520" height="42" fill="black"/>
+      <!-- Restore TCB letters inside stripe -->
+      <g fill="white">
+        <path d="M150 126h62v11H188v30h-14v-30h-24z"/>
+        <path d="M286 135c0-11-9-18-24-18c-17 0-28 11-28 27s11 27 28 27c15 0 24-7 24-18h-13c0 5-4 8-11 8c-10 0-15-7-15-17s5-17 15-17c7 0 11 3 11 8z"/>
+        <path d="M304 126h26c15 0 24 7 24 17c0 7-4 12-11 14c9 2 14 8 14 16c0 11-10 17-27 17h-26zM318 136v12h11c6 0 10-2 10-6s-4-6-10-6zM318 156v13h13c7 0 11-3 11-6s-4-7-11-7z"/>
+        <rect x="382" y="140" width="15" height="7" rx="1.5"/>
+        <path d="M420 136c26-5 54-4 82 3l-5 9c-24-5-50-7-77 0z"/>
+        <path d="M515 130c28-5 60-2 90 5l-7 9c-26-5-54-8-83 0z"/>
+      </g>
     </mask>
   </defs>
-  <path fill="currentColor" d="M4 160l92-26h410c48 8 104 28 170 52H4v-26z"/>
-  <path mask="url(#tcbMark)" fill="currentColor" d="M16 96l54 2c8-40 32-68 64-74c52-12 148-14 200-4c22 4 40 18 54 38l42 52h130c38 2 66 14 74 34c6 14-6 24-24 26l52 18H470l-14-16H82L12 186H4v-30l90-22H22c-10 0-14-10-8-16l28-14V96H20c-4 0-6 0-4 0z"/>
+
+  <!-- Full pickup + chassis as one mass; mask punches windows + stripe and restores TCB -->
+  <path
+    mask="url(#tcb)"
+    fill="currentColor"
+    d="
+      M 16 96
+      L 70 98
+      C 78 52 108 26 152 20
+      C 200 12 275 12 328 22
+      C 354 28 372 46 386 70
+      L 416 110
+      L 560 112
+      C 592 114 616 126 624 146
+      C 630 160 616 170 596 172
+      L 650 196
+      L 480 196
+      L 466 178
+      L 80 178
+      L 12 196
+      L 4 196
+      L 4 158
+      L 92 134
+      L 24 134
+      C 12 134 8 122 16 116
+      L 44 104
+      L 44 96
+      L 20 94
+      Z
+    "
+  />
 </svg>
