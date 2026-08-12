@@ -114,34 +114,49 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Header strip — flat, no glow */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 pb-1">
+      {/* Header strip */}
+      <div className="relative overflow-hidden rounded-lg bg-ink text-white border border-white/10 px-5 sm:px-6 py-5">
+        <div className="absolute inset-y-0 right-0 w-1/2 tcb-hero-image opacity-[0.18] bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/92 to-ink/50" />
+        <div className="relative flex flex-col md:flex-row md:items-end justify-between gap-5">
         <div>
-          <p className="text-[11px] font-semibold text-accent tracking-wide mb-1">
+          <p className="text-[11px] font-semibold text-white/55 tracking-wide mb-1">
             TCB Moçambique
           </p>
-          <h2 className="text-2xl sm:text-[1.75rem] font-semibold text-ink dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-[1.75rem] font-semibold tracking-tight">
             Recrutamento & frota
           </h2>
-          <p className="text-sm text-ink/50 dark:text-white/45 mt-1 max-w-lg">
+          <p className="text-sm text-white/62 mt-1 max-w-xl">
             Admissão de motoristas, validação INATRO e vagas activas.
           </p>
+          <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-white/65">
+            <span className="px-2.5 py-1 rounded-md bg-white/10 border border-white/10">
+              {pendingDrivers} em análise
+            </span>
+            <span className="px-2.5 py-1 rounded-md bg-white/10 border border-white/10">
+              {pendingDocsCount} documentos pendentes
+            </span>
+            <span className="px-2.5 py-1 rounded-md bg-white/10 border border-white/10">
+              {openJobs} vagas abertas
+            </span>
+          </div>
         </div>
         <div className="flex flex-wrap items-center gap-2.5">
           <button
             onClick={onOpenDriverForm}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-ink dark:bg-white text-white dark:text-ink text-[12px] font-semibold rounded-lg hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-ink text-[12px] font-semibold rounded-lg hover:bg-paper-muted transition-colors"
           >
             <PlusCircle className="w-4 h-4" />
             Cadastrar motorista
           </button>
           <button
             onClick={onOpenJobForm}
-            className="inline-flex items-center gap-2 px-5 py-2.5 border border-ink/15 dark:border-white/15 text-ink dark:text-white text-[12px] font-semibold rounded-lg hover:bg-ink/5 dark:hover:bg-white/5 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/20 text-white text-[12px] font-semibold rounded-lg hover:bg-white/10 transition-colors"
           >
             <Briefcase className="w-4 h-4" />
             Criar vaga
           </button>
+        </div>
         </div>
       </div>
 

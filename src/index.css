@@ -9,26 +9,26 @@
   --font-mono: "JetBrains Mono", monospace;
 
   /* Light */
-  --color-ink: #0c1016;
-  --color-ink-soft: #141a22;
-  --color-ink-muted: #1c2430;
-  --color-paper: #f4f3f1;
+  --color-ink: #101820;
+  --color-ink-soft: #17212b;
+  --color-ink-muted: #22303d;
+  --color-paper: #f6f8fb;
   --color-paper-elevated: #ffffff;
-  --color-paper-muted: #e9e7e3;
+  --color-paper-muted: #e8edf3;
   --color-accent: #9a6b2f;
   --color-accent-hover: #825824;
   --color-accent-muted: #ebe0d0;
   --color-accent-fg: #6b4a1f;
 
   /* Semantic */
-  --color-success: #2f9e6b;
-  --color-success-muted: #e4f3eb;
-  --color-warning: #9a6b2f;
-  --color-warning-muted: #f0e8da;
+  --color-success: #16845f;
+  --color-success-muted: #def3eb;
+  --color-warning: #b7791f;
+  --color-warning-muted: #f6ead5;
   --color-danger: #c44a45;
   --color-danger-muted: #f5e4e3;
-  --color-info: #6b7280;
-  --color-info-muted: #eceef1;
+  --color-info: #2563eb;
+  --color-info-muted: #e5edff;
 
   /* Dark-mode surfaces (used via utilities below) */
   --color-dark-bg: #0a0d12;
@@ -60,22 +60,36 @@
 
 @layer utilities {
   .tcb-surface {
-    background: var(--color-paper);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(246, 248, 251, 0.98) 42%, #eef3f8 100%);
   }
 
   html.dark .tcb-surface {
-    background: var(--color-dark-bg);
+    background:
+      linear-gradient(180deg, #0a0d12 0%, #0d141c 48%, #101820 100%);
   }
 
   .tcb-panel {
     background: #ffffff;
-    border: 1px solid rgba(12, 16, 22, 0.08);
+    border: 1px solid rgba(16, 24, 32, 0.09);
+    box-shadow: 0 1px 2px rgba(16, 24, 32, 0.04);
+  }
+
+  .tcb-panel.rounded-xl,
+  .tcb-panel.rounded-2xl {
+    border-radius: 0.5rem;
+  }
+
+  .rounded-xl,
+  .rounded-2xl {
+    border-radius: 0.5rem;
   }
 
   html.dark .tcb-panel {
     background: var(--color-dark-panel);
     border-color: var(--color-dark-border);
     color: var(--color-dark-text);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
   }
 
   .tcb-panel-muted {
@@ -84,6 +98,18 @@
 
   html.dark .tcb-panel-muted {
     background: var(--color-dark-elevated);
+  }
+
+  .tcb-hero-image {
+    background-image: url('/hero-fleet.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .tcb-hero-scrim {
+    background:
+      linear-gradient(90deg, rgba(16, 24, 32, 0.96) 0%, rgba(16, 24, 32, 0.82) 38%, rgba(16, 24, 32, 0.24) 100%),
+      linear-gradient(0deg, rgba(16, 24, 32, 0.84) 0%, rgba(16, 24, 32, 0.1) 54%);
   }
 
   .tcb-page-enter {

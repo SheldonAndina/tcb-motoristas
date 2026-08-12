@@ -86,30 +86,24 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
   return (
     <div className="min-h-screen tcb-surface flex flex-col lg:flex-row font-sans antialiased text-ink dark:text-white">
       {/* Brand hero — dominant plane */}
-      <section className="relative lg:w-[52%] min-h-[42vh] lg:min-h-screen overflow-hidden bg-ink text-white flex flex-col justify-between p-8 sm:p-12">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&auto=format&fit=crop&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/40" />
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-accent/25 to-transparent" />
+      <section className="relative lg:w-[54%] min-h-[44vh] lg:min-h-screen overflow-hidden bg-ink text-white flex flex-col justify-between p-8 sm:p-12">
+        <div className="absolute inset-0 tcb-hero-image scale-[1.02]" />
+        <div className="absolute inset-0 tcb-hero-scrim" />
+        <div className="absolute inset-x-0 top-0 h-1 bg-accent" />
 
         <div className="relative z-10">
           <Logo size="lg" variant="light" />
         </div>
 
-        <div className="relative z-10 max-w-lg space-y-4 py-10 lg:py-0">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent">
+        <div className="relative z-10 max-w-xl space-y-4 py-10 lg:py-0">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">
             Maputo · Beira · Nampula
           </p>
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.05]">
-            TCB
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.05]">
+            Recrutamento de motoristas e controlo operacional
           </h1>
           <p className="text-base sm:text-lg text-white/75 font-medium leading-relaxed">
-            Sistema interno de recrutamento e gestão de frota.
+            Uma área de trabalho clara para gerir candidaturas, documentos e equipas de condução.
           </p>
           {onOpenPublicPortal && (
             <button
@@ -123,16 +117,16 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
           )}
         </div>
 
-        <p className="relative z-10 text-[10px] font-bold uppercase tracking-widest text-white/35">
-          Transportes de Moçambique
+        <p className="relative z-10 text-[10px] font-bold uppercase tracking-widest text-white/45">
+          TCB · Transportes de Moçambique
         </p>
       </section>
 
       {/* Auth panel */}
       <section className="flex-1 flex flex-col justify-center items-center p-6 sm:p-10">
-        <div className="w-full max-w-md tcb-panel rounded-xl shadow-lg p-8 sm:p-10">
+        <div className="w-full max-w-md tcb-panel rounded-xl p-8 sm:p-10">
           <div className="mb-8">
-            <p className="text-[10px] font-bold text-accent tracking-wide">
+            <p className="text-[10px] font-bold text-accent uppercase tracking-[0.18em]">
               Portal de gestão
             </p>
             <h2 className="text-2xl font-semibold text-ink dark:text-white tracking-tight mt-1">
@@ -214,7 +208,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
                   key={u.id}
                   type="button"
                   onClick={() => handleDemoSelect(u)}
-                  className="flex items-center gap-3 p-2.5 rounded-xl border border-ink/8 dark:border-white/10 hover:border-accent/40 hover:bg-accent-muted/40 dark:hover:bg-accent/10 transition-all text-left"
+                  className="flex items-center gap-3 p-2.5 rounded-lg border border-ink/8 dark:border-white/10 hover:border-accent/40 hover:bg-accent-muted/50 dark:hover:bg-accent/10 transition-all text-left"
                 >
                   <img
                     src={u.avatar}

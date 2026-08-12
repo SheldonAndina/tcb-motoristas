@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = ({
   return (
     <div
       onClick={onClick}
-      className={`tcb-panel rounded-xl ${padding ? 'p-5' : ''} ${
+      className={`tcb-panel rounded-lg ${padding ? 'p-5' : ''} ${
         interactive
           ? 'cursor-pointer hover:border-ink/20 dark:hover:border-white/20 transition-colors'
           : ''

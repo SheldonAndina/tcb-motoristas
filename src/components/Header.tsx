@@ -135,7 +135,7 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-30 tcb-panel border-b border-ink/8 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4 shrink-0">
+    <header className="sticky top-0 z-30 tcb-panel border-b border-ink/8 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4 shrink-0 backdrop-blur-md bg-white/92 dark:bg-dark-panel/92">
       <div className="flex items-center gap-3 min-w-0">
         <button
           onClick={onOpenMobileMenu}

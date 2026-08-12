@@ -80,12 +80,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
       )}
 
       <aside
-        className={`fixed top-0 left-0 bottom-0 w-[260px] bg-gradient-to-b from-ink via-ink-soft to-ink border-r border-white/10 z-50 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:translate-x-0 ${
+        className={`fixed top-0 left-0 bottom-0 w-[260px] bg-ink border-r border-white/10 z-50 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:translate-x-0 ${
           isOpenMobile ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="space-y-2">
-          <div className="h-20 px-5 border-b border-white/10 flex items-center justify-between gap-2">
+          <div className="h-20 px-5 border-b border-white/10 flex items-center justify-between gap-2 relative">
+            <span className="absolute inset-x-0 top-0 h-1 bg-accent" />
             <Logo size="sm" variant="light" showSubtitle={false} />
             <button
               onClick={() => setIsOpenMobile(false)}
@@ -102,7 +103,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onOpenDriverForm();
                 setIsOpenMobile(false);
               }}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-white/10 text-white border border-white/15 text-[12px] font-semibold rounded-lg hover:bg-white/15 transition-colors"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-accent text-white border border-accent/70 text-[12px] font-semibold rounded-lg hover:bg-accent-hover transition-colors"
             >
               <PlusCircle className="w-4 h-4" />
               <span>Novo motorista</span>
@@ -128,8 +129,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onClick={() => handleNavigate(item.id)}
                   className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
                     isActive
-                      ? 'bg-white/10 text-white'
-                      : 'text-white/50 hover:text-white hover:bg-white/5'
+                      ? 'bg-white text-ink'
+                      : 'text-white/58 hover:text-white hover:bg-white/7'
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -159,7 +160,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <div className="min-w-0">
                 <p className="text-xs font-bold text-white truncate">{currentUser.name}</p>
                 <div className="flex items-center gap-1 text-[10px] text-white/45 font-medium mt-0.5">
-                  <ShieldCheck className="w-3 h-3 text-accent" />
+            <ShieldCheck className="w-3 h-3 text-white/70" />
                   <span className="truncate">{currentUser.role}</span>
                 </div>
               </div>

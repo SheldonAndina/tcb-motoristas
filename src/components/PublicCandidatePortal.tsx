@@ -288,23 +288,17 @@ export const PublicCandidatePortal: React.FC<PublicCandidatePortalProps> = ({
 
       {/* Full-bleed hero — brand first */}
       <div className="relative min-h-[58vh] sm:min-h-[62vh] overflow-hidden bg-ink text-white flex items-end">
-        <div
-          className="absolute inset-0 bg-cover bg-center scale-105"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1800&auto=format&fit=crop&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/25" />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-accent/20 to-transparent" />
+        <div className="absolute inset-0 tcb-hero-image scale-[1.03]" />
+        <div className="absolute inset-0 tcb-hero-scrim" />
+        <div className="absolute inset-x-0 top-0 h-1 bg-accent" />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-8 pb-10 pt-24 space-y-5">
           <Logo size="lg" variant="light" />
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.05] max-w-2xl">
+          <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight leading-[1.05] max-w-2xl">
             Conduza com a TCB
           </h2>
           <p className="text-sm sm:text-base text-white/70 max-w-xl leading-relaxed font-medium">
-            Candidate-se de casa. Frota nacional — Maputo, Beira, Nampula e rotas interprovinciais.
+            Candidate-se de casa para vagas de condução em Maputo, Beira, Nampula e rotas interprovinciais.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 pt-1">
             <button
