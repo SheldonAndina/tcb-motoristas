@@ -1,34 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 130" fill="none" role="img" aria-label="TCB Transportes">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 120" fill="none" role="img" aria-label="TCB Transportes">
   <defs>
-    <!-- Máscara para cortar as letras TCB do corpo da pickup -->
     <mask id="tcbCutout">
-      <rect width="360" height="130" fill="white"/>
-      <!-- Recorte das letras TCB com fonte serif bold -->
-      <text x="102" y="96" fill="black" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700" letter-spacing="6">TCB</text>
+      <rect width="460" height="120" fill="white"/>
+      <!-- Recorte das janelas -->
+      <rect x="152" y="24" width="38" height="22" rx="3" fill="black"/>
+      <rect x="196" y="24" width="38" height="22" rx="3" fill="black"/>
+      <rect x="240" y="24" width="38" height="22" rx="3" fill="black"/>
+      <path d="M 126 46 L 140 24 L 148 24 L 148 46 Z" fill="black"/>
+      <!-- Recorte "TCB" -->
+      <text x="155" y="86" fill="black" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" letter-spacing="10">TCB</text>
+      <!-- Ponto decorativo à esquerda do T -->
+      <circle cx="147" cy="78" r="4" fill="black"/>
     </mask>
   </defs>
-  
-  <!-- Silhueta da pickup de 4 portas (crew cab) -->
-  <g mask="url(#tcbCutout)">
-    <!-- Carroçaria superior: teto, vidros, capô -->
-    <path d="M 30 100 L 30 75 L 50 75 L 55 70 L 80 70 L 85 75 L 100 75 L 105 70 L 130 70 L 135 75 L 155 75 L 160 70 L 180 70 L 185 75 L 220 75 L 230 60 L 265 60 L 280 75 L 310 75 L 320 85 L 320 100 Z" fill="currentColor"/>
-    
-    <!-- Carroçaria inferior: bloco sólido onde TCB fica cortado -->
-    <rect x="30" y="75" width="290" height="35" fill="currentColor"/>
-    
-    <!-- Janelas (recortes na silhueta) -->
-    <!-- Janela dianteira -->
-    <rect x="235" y="65" width="26" height="18" rx="2" fill="white" opacity="0.2"/>
-    <!-- Janela traseira esquerda -->
-    <rect x="162" y="72" width="28" height="16" rx="1.5" fill="white" opacity="0.2"/>
-    <!-- Janela traseira direita -->
-    <rect x="195" y="72" width="28" height="16" rx="1.5" fill="white" opacity="0.2"/>
-  </g>
-  
+
+  <!-- Linhas de velocidade (frente do veículo, lado esquerdo) -->
+  <line x1="8" y1="56" x2="68" y2="56" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="22" y1="63" x2="68" y2="63" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="36" y1="70" x2="68" y2="70" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Silhueta principal da pickup com máscara -->
+  <path
+    mask="url(#tcbCutout)"
+    fill="currentColor"
+    d="
+      M 72 92
+      L 72 62
+      C 76 52, 88 42, 100 36
+      L 120 28
+      L 130 22
+      L 140 19
+      L 148 18
+      L 286 18
+      C 290 18, 294 20, 296 22
+      L 308 34
+      L 316 48
+      L 320 56
+      L 324 56
+      L 332 56
+      L 336 60
+      L 336 72
+      L 340 76
+      C 360 82, 400 90, 440 96
+      L 440 98
+      L 336 98
+      L 330 98
+      L 72 98
+      Z
+    "
+  />
+
   <!-- Linha de base (solo) -->
-  <rect x="25" y="110" width="300" height="8" rx="1" fill="currentColor"/>
-  
-  <!-- Rodas simplificadas (opcional, decorativas) -->
-  <circle cx="75" cy="110" r="8" fill="currentColor" opacity="0.4"/>
-  <circle cx="280" cy="110" r="8" fill="currentColor" opacity="0.4"/>
+  <line x1="70" y1="102" x2="442" y2="102" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
 </svg>
