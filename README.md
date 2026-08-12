@@ -1,6 +1,6 @@
 # TCB Motoristas — Recrutamento e Gestão de Frota
 
-Frontend corporativo da TCB (Transportes de Moçambique) para recrutamento e gestão de motoristas.
+Frontend corporativo da TCB (Transportes Carlos Bié) para recrutamento e gestão de motoristas.
 
 ## Stack
 

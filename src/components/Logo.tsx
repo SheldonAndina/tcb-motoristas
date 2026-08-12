@@ -22,23 +22,52 @@ const titleSizes = {
   xl: 'text-2xl',
 };
 
-function markFilter(variant: LogoProps['variant'] = 'auto') {
-  if (variant === 'light') return 'brightness-0 invert';
-  if (variant === 'dark') return 'brightness-0';
-  return 'brightness-0 dark:invert';
-}
-
 export const TcbMark: React.FC<{ className?: string; variant?: LogoProps['variant'] }> = ({
   className = '',
   variant = 'auto',
-}) => (
-  <img
-    src="/logo.png"
-    alt="TCB"
-    draggable={false}
-    className={`w-auto object-contain object-left ${markFilter(variant)} ${className}`}
-  />
-);
+}) => {
+  // Logo é PNG com transparência. Usamos versões preta/branca para ficar 100% igual ao decalque
+  // sem “invert”/filters que alteram pixels.
+  if (variant === 'light') {
+    return (
+      <img
+        src="/logo.png"
+        alt="TCB"
+        draggable={false}
+        className={`w-auto object-contain object-left ${className}`}
+      />
+    );
+  }
+
+  if (variant === 'dark') {
+    return (
+      <img
+        src="/logo-white.png"
+        alt="TCB"
+        draggable={false}
+        className={`w-auto object-contain object-left ${className}`}
+      />
+    );
+  }
+
+  // auto: preto no modo claro; branco no modo escuro (Tailwind `dark` class).
+  return (
+    <>
+      <img
+        src="/logo.png"
+        alt="TCB"
+        draggable={false}
+        className={`w-auto object-contain object-left dark:hidden ${className}`}
+      />
+      <img
+        src="/logo-white.png"
+        alt="TCB"
+        draggable={false}
+        className={`w-auto object-contain object-left hidden dark:block ${className}`}
+      />
+    </>
+  );
+};
 
 export const Logo: React.FC<LogoProps> = ({
   className = '',
@@ -77,7 +106,7 @@ export const Logo: React.FC<LogoProps> = ({
             TCB
           </span>
           <span className={`text-[10px] font-medium tracking-wide mt-0.5 ${subtitleColor}`}>
-            Transportes de Moçambique
+            Transportes Carlos Bié
           </span>
         </div>
       )}
